@@ -2,7 +2,6 @@ package com.desafio.pergunta3;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -12,7 +11,7 @@ import java.util.Scanner;
 
 public class FaturamentoDiario {
     public static void main(String[] args) {
-        String jsonFile = "src/main/resources/faturamento.json";
+        String jsonFile = "src/main/resources/dados.json";
 
         try {
             String json = lerArquivo(jsonFile);
@@ -25,7 +24,7 @@ public class FaturamentoDiario {
 
             for (int i = 0; i < faturamentoArray.length(); i++) {
                 JSONObject entry = faturamentoArray.getJSONObject(i);
-                double faturamento = entry.getDouble("faturamento-diario");
+                double faturamento = entry.getDouble("valor");
 
                 if (faturamento > 0) {
                     faturamentos.add(faturamento);
